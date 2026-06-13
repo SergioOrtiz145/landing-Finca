@@ -1,0 +1,32 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Fotos originales de cámara (pesadas) — solo conservar los .webp optimizados
+public/fotos/*.JPG
+public/fotos/*.jpg
+public/habitaciones/*.JPG
+public/habitaciones/*.jpg
+public/hero/*.jpg
+public/hero/*.jpeg

@@ -20,8 +20,8 @@ export default {
     extend: {
       colors: {
         tierra: {
-          dark: '#7c2d12',
-          DEFAULT: '#c2410c',
+          dark: '#3b1a0a',   // café muy oscuro para títulos
+          DEFAULT: '#6b3a2a', // café medio para texto de cuerpo (legible)
         },
         verde: {
           dark: '#065f46',

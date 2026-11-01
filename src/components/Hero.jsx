@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, EffectFade, Pagination } from 'swiper/modules';
 import 'swiper/css';
@@ -47,31 +48,43 @@ const Hero = () => {
               className="h-full w-full bg-cover bg-center"
               style={{ backgroundImage: `url(${image})` }}
             >
-              <div className="absolute inset-0 bg-black/40" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/25 to-black/40" />
             </div>
           </SwiperSlide>
         ))}
       </Swiper>
 
       {/* Contenido sobre el slider */}
-      <div className="absolute inset-0 flex items-center justify-center z-10 px-4">
-        <div className="text-center text-white max-w-4xl">
-          <span className="inline-block font-sans font-semibold tracking-widest uppercase text-sm mb-4 text-verde-light drop-shadow-lg">
-            Finca San Marcos
+      <div className="absolute inset-0 flex flex-col justify-end z-10 px-6 pb-16 md:pb-24 pointer-events-none">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+          className="container mx-auto text-white"
+        >
+          <span className="inline-block font-sans font-semibold tracking-[0.3em] uppercase text-xs md:text-sm mb-5 text-crema">
+            Finca San Marcos · La Mesa, Cundinamarca
           </span>
-          <h1 className="font-display text-6xl md:text-8xl lg:text-9xl font-bold mb-6 text-shadow italic leading-tight">
-            Tu Escape Perfecto en la Naturaleza
+          <h1 className="font-display text-4xl md:text-6xl lg:text-7xl font-semibold mb-6 leading-[1.08] tracking-tight max-w-4xl">
+            Tu escape perfecto <span className="font-medium text-crema">en la naturaleza</span>
           </h1>
-          <p className="text-xl md:text-2xl lg:text-3xl mb-10 text-shadow font-light tracking-wide">
-            Una experiencia única para hasta 17 personas en el corazón de Colombia
+          <p className="text-lg md:text-xl mb-9 font-light max-w-xl text-white/90">
+            Una finca para hasta 17 personas en el corazón de Colombia.
           </p>
-          <button
-            onClick={scrollToContact}
-            className="bg-verde hover:bg-verde-light text-white font-bold text-lg px-12 py-4 rounded-full transition-all duration-300 hover:scale-110 shadow-2xl tracking-wider uppercase"
-          >
-            Reserva Ahora
-          </button>
-        </div>
+          <div className="flex flex-wrap items-center gap-x-8 gap-y-5">
+            <button
+              onClick={scrollToContact}
+              className="pointer-events-auto bg-terracota hover:bg-terracota-dark text-white font-semibold text-sm md:text-base px-9 py-4 rounded-full transition-[background-color,transform] duration-200 active:scale-[0.96] tracking-[0.15em] uppercase"
+            >
+              Reservar ahora
+            </button>
+            <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/85 font-light tracking-wide">
+              <li>17 personas</li>
+              <li>3 habitaciones</li>
+              <li>Piscina con jacuzzi</li>
+            </ul>
+          </div>
+        </motion.div>
       </div>
     </div>
   );

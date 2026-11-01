@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Waves, Flame, Wifi, Car, Target, Utensils } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 const Amenidades = () => {
   const amenities = [
@@ -40,43 +41,33 @@ const Amenidades = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.15,
+        staggerChildren: 0.08,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, scale: 0.8 },
+    hidden: { opacity: 0, y: 12 },
     visible: {
       opacity: 1,
-      scale: 1,
+      y: 0,
       transition: {
-        duration: 0.5,
+        duration: 0.35,
+        ease: [0.22, 1, 0.36, 1],
       },
     },
   };
 
   return (
-    <section className="py-20 md:py-28 bg-gradient-to-br from-verde-dark via-verde to-verde-light text-white">
+    <section className="py-20 md:py-28 bg-verde-dark text-white">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block text-crema font-sans font-semibold tracking-widest uppercase text-sm mb-3">
-            Lo que incluye
-          </span>
-          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold mb-4 italic">
-            Amenidades
-          </h2>
-          <div className="w-20 h-1 bg-crema mx-auto mb-6 rounded-full" />
-          <p className="text-lg md:text-xl text-crema-light max-w-2xl mx-auto font-light">
-            Todo lo que necesitas para una estadía inolvidable
-          </p>
-        </motion.div>
+        <SectionHeader
+          tone="dark"
+          number="03"
+          label="Lo que incluye"
+          title="Amenidades"
+          subtitle="Todo lo que necesitas para una estadía inolvidable."
+        />
 
         <motion.div
           variants={containerVariants}
@@ -89,7 +80,7 @@ const Amenidades = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-white/15 backdrop-blur-sm p-8 rounded-2xl hover:bg-white/25 transition-all duration-300 border border-white/30 hover:-translate-y-1"
+              className="bg-white/5 p-8 rounded-2xl hover:bg-white/10 transition-colors duration-300 border border-crema/20"
             >
               <div className="bg-crema text-verde-dark w-16 h-16 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
                 <amenity.icon size={32} />

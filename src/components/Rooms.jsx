@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Bed, Bath } from 'lucide-react';
+import SectionHeader from './SectionHeader';
 
 const Rooms = () => {
   const rooms = [
@@ -31,18 +32,19 @@ const Rooms = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.3,
+        staggerChildren: 0.1,
       },
     },
   };
 
   const itemVariants = {
-    hidden: { opacity: 0, x: -50 },
+    hidden: { opacity: 0, y: 16 },
     visible: {
       opacity: 1,
-      x: 0,
+      y: 0,
       transition: {
-        duration: 0.7,
+        duration: 0.4,
+        ease: [0.22, 1, 0.36, 1],
       },
     },
   };
@@ -50,24 +52,12 @@ const Rooms = () => {
   return (
     <section className="py-20 md:py-28 bg-crema-light">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block text-verde font-sans font-semibold tracking-widest uppercase text-sm mb-3">
-            Descansa con nosotros
-          </span>
-          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-tierra-dark mb-4 italic">
-            Nuestras Habitaciones
-          </h2>
-          <div className="w-20 h-1 bg-verde mx-auto mb-6 rounded-full" />
-          <p className="text-lg md:text-xl text-tierra max-w-2xl mx-auto font-light">
-            Espacios cómodos y acogedores para tu descanso perfecto
-          </p>
-        </motion.div>
+        <SectionHeader
+          number="02"
+          label="Descansa con nosotros"
+          title="Nuestras habitaciones"
+          subtitle="Espacios cómodos y acogedores para tu descanso perfecto."
+        />
 
         <motion.div
           variants={containerVariants}
@@ -80,7 +70,7 @@ const Rooms = () => {
             <motion.div
               key={index}
               variants={itemVariants}
-              className="bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-verde/10"
+              className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-tierra/10"
             >
               <div className="h-64 overflow-hidden">
                 <img

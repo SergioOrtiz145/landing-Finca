@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import Lightbox from 'yet-another-react-lightbox';
 import 'yet-another-react-lightbox/styles.css';
+import SectionHeader from './SectionHeader';
 
 // ─────────────────────────────────────────────────────────────────
 //  AGREGA AQUÍ LOS NOMBRES DE TUS FOTOS (sin la ruta, solo el nombre)
@@ -28,6 +29,13 @@ const fotoNombres = [
   'DSC03714.webp',
   'DSC03737.webp',
   'IMG_3425.JPG.webp',
+  // Fotos nuevas (WhatsApp 27-oct-2026): portón, entrada, piscina de noche, interior, camino
+  'finca-extra-06.webp',
+  'finca-extra-01.webp',
+  'finca-extra-03.webp',
+  'finca-extra-04.webp',
+  'finca-extra-05.webp',
+  'finca-extra-02.webp',
 ];
 
 const fincaImages = fotoNombres.map((nombre) => ({
@@ -62,24 +70,12 @@ const FincaPhotos = () => {
   return (
     <section className="py-20 md:py-28 bg-white">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-          className="text-center mb-16"
-        >
-          <span className="inline-block text-verde font-sans font-semibold tracking-widest uppercase text-sm mb-3">
-            Nuestra Finca
-          </span>
-          <h2 className="font-display text-5xl md:text-6xl lg:text-7xl font-bold text-tierra-dark mb-4 italic">
-            Un Paraíso Natural
-          </h2>
-          <div className="w-20 h-1 bg-verde mx-auto mb-6 rounded-full" />
-          <p className="text-lg md:text-xl text-tierra max-w-2xl mx-auto font-light">
-            Cada rincón fue diseñado para que desconectes, descanses y disfrutes en familia
-          </p>
-        </motion.div>
+        <SectionHeader
+          number="01"
+          label="Nuestra finca"
+          title="Un paraíso natural"
+          subtitle="Cada rincón fue diseñado para que desconectes, descanses y disfrutes en familia."
+        />
 
         {/* Grid responsive — primera foto grande, resto en cuadrícula */}
         <motion.div
@@ -103,7 +99,7 @@ const FincaPhotos = () => {
                 decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all duration-300" />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-300" />
             </motion.div>
           )}
 
@@ -122,7 +118,7 @@ const FincaPhotos = () => {
                 decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all duration-300" />
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-300" />
             </motion.div>
           ))}
         </motion.div>

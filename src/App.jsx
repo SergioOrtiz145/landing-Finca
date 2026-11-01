@@ -1,3 +1,4 @@
+import { MotionConfig } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import FincaPhotos from './components/FincaPhotos';
@@ -9,16 +10,18 @@ import WhatsAppButton from './components/WhatsAppButton';
 
 function App() {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <Hero />
-      <FincaPhotos />
-      <Rooms />
-      <Amenidades />
-      <Contact />
-      <Footer />
-      <WhatsAppButton />
-    </div>
+    <MotionConfig reducedMotion="user">
+      <div className="min-h-screen">
+        <Navbar />
+        <Hero />
+        <FincaPhotos />
+        <Rooms />
+        <Amenidades />
+        <Contact />
+        <Footer />
+        <WhatsAppButton />
+      </div>
+    </MotionConfig>
   );
 }
 

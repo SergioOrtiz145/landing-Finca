@@ -20,23 +20,27 @@ export default {
     extend: {
       colors: {
         tierra: {
-          dark: '#3b1a0a',   // café muy oscuro para títulos
-          DEFAULT: '#6b3a2a', // café medio para texto de cuerpo (legible)
+          dark: '#2b1d14',   // café casi negro para títulos
+          DEFAULT: '#5c4636', // café medio para texto de cuerpo (legible)
         },
         verde: {
-          dark: '#065f46',
-          DEFAULT: '#10b981',
-          light: '#6ee7b7',
+          dark: '#1c3a2a',   // verde bosque profundo
+          DEFAULT: '#2f5d3f',
+          light: '#9cc0a6',
         },
         crema: {
-          light: '#fff7ed',
-          DEFAULT: '#f97316',
+          light: '#fbf6ec',  // papel cálido
+          DEFAULT: '#e6cfa9', // arena
+        },
+        terracota: {
+          DEFAULT: '#b5532f', // acento / CTA principal
+          dark: '#954120',
         },
         naranja: '#ea580c',
       },
       fontFamily: {
-        display: ['Cormorant Garamond', 'serif'],
-        sans: ['Raleway', 'sans-serif'],
+        display: ['Poppins', 'sans-serif'],
+        sans: ['Poppins', 'sans-serif'],
       },
     },
   },

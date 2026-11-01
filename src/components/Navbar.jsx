@@ -20,7 +20,7 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-[background-color,padding,box-shadow] duration-300 ${
         isScrolled
           ? 'bg-verde-dark/95 backdrop-blur-md shadow-lg py-3'
           : 'bg-transparent py-6'
@@ -36,7 +36,7 @@ const Navbar = () => {
         
         <button
           onClick={scrollToContact}
-          className={`bg-verde hover:bg-verde-light text-white font-semibold px-6 py-2 md:px-8 md:py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-lg tracking-wider uppercase text-sm`}
+          className={`bg-terracota hover:bg-terracota-dark text-white font-semibold px-6 py-2 md:px-8 md:py-3 rounded-full transition-[background-color,transform] duration-200 active:scale-[0.96] tracking-[0.15em] uppercase text-xs md:text-sm`}
         >
           Reservar
         </button>

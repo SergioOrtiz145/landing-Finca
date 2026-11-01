@@ -27,7 +27,7 @@ const WhatsAppButton = () => {
       <MessageCircle size={32} className="relative z-10" />
       
       {/* Tooltip */}
-      <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-tierra-dark text-white px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+      <span className="absolute right-full mr-3 top-1/2 -translate-y-1/2 bg-tierra-dark text-white px-4 py-2 rounded-lg text-sm font-semibold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
         ¡Chatea con nosotros!
       </span>
     </motion.a>
